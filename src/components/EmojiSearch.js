@@ -1,11 +1,14 @@
 import React from 'react';
 
 class EmojiSearch extends React.Component {
+    onInput() {
+        const value = this.inputRef.value;
+        this.props.updateKeyword(value);
+    }
+
     render() {
         return (
-            <div>
-            <h2>searching</h2>
-            </div>
+          <input ref={ref => this.inputRef = ref} type="text" name="search" placeholder="Search.." onInput={this.onInput.bind(this)}/>
         );
     }
 }

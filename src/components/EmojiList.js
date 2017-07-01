@@ -1,14 +1,25 @@
 import React from 'react';
 
-import Emojis from './Emojis';
 
 class EmojiList extends React.Component {
+     filterTheSmileys() {
+       return this.props.data.filter((e) => {
+            return (e.keywords.includes(this.props.searchOnKeyword));
+        });
+    }
+
     render() {
+       const renderEmoji = (e) => (
+            
+                <p>{e.symbol}</p> 
+    
+        );
+    
+
         return (
             <div>
-                <h2>lists emojis</h2>
-                <Emojis data={this.props.data}/>
-            </div>
+                <ul>{this.filterTheSmileys().map(renderEmoji)}</ul>
+                </div>
         );
     }
 }
