@@ -1,5 +1,6 @@
 import React from 'react';
 
+import Emoji from './Emoji';
 
 class EmojiList extends React.Component {
      filterTheSmileys() {
@@ -9,17 +10,10 @@ class EmojiList extends React.Component {
     }
 
     render() {
-       const renderEmoji = (e) => (
-            
-                <p>{e.symbol}</p> 
-    
-        );
-    
-
         return (
             <div>
-                <ul>{this.filterTheSmileys().map(renderEmoji)}</ul>
-                </div>
+                <ul>{this.filterTheSmileys().map((e) => <Emoji symbol={e.symbol} title={e.title} keywords={e.keywords}/>)}</ul>
+            </div>
         );
     }
 }
