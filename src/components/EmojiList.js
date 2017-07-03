@@ -11,6 +11,7 @@ class EmojiList extends React.Component {
 
     render() {
         return (
+            // basicall center everything
             <div>
                 <ul>{this.filterTheSmileys().map((e) => <Emoji symbol={e.symbol} title={e.title} keywords={e.keywords}/>)}</ul>
             </div>

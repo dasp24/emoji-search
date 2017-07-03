@@ -11,10 +11,9 @@ class EmojiSearchApp extends React.Component {
             keyword:''
         };
         this.style = {
-                    border: '3px solid green',
-                    shadow: '3px solid green',
-                    padding: '5px',
-                    display: 'inline-block'
+                    left: '500px',
+                    width: '90%',
+                    textAlign: 'center'
                 };
         }
 
@@ -25,7 +24,8 @@ class EmojiSearchApp extends React.Component {
     render () {
         return (
             <div>
-                <h1 style={this.style}>FIND YOU'RE FAVOURITE</h1>
+                <h1 style={this.style}>EMOJI SEARCH APP</h1>
+                <img src = {require('./emojiBanner.jpg')} width="100%" height="200"/>
                 <EmojiSearch updateKeyword={this.updateKeyword.bind(this)}/>
                 <EmojiList data={emojiData} searchOnKeyword={this.state.keyword}/>
             </div>

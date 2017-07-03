@@ -4,11 +4,9 @@ class EmojiSearch extends React.Component {
     constructor() {
         super();
         this.style = {
-           position: 'fixed',
-           top: '50%',
-           left: '50%',
-           margintop: '-50px',
-           marginleft: '-100px'
+            
+           width:'95%',
+           height:'40'
         };
     }
 
@@ -19,7 +17,7 @@ class EmojiSearch extends React.Component {
 
     render() {
         return (
-          <input ref={ref => this.inputRef = ref} type="text" name="search" style={this.style} placeholder="Search.." onInput={this.onInput.bind(this)}/>
+          <input ref={ref => this.inputRef = ref} type="text" name="search" style={this.style} placeholder="Start typing..." onInput={this.onInput.bind(this)}/>
         );
     }
 }
